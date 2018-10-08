@@ -4,7 +4,12 @@ import { User } from "./entity/User";
 
 export  const resolvers: IResolvers = {
   Query: {
-    hello: () => "hi"
+    me: (_, __, { req }) => {
+      if (!req.session.userId) {
+        return null;
+      }
+      return User.findOne(req.session.userId);
+    }
   },
   Mutation: {
     register: async (_, {email, password}) => {
@@ -28,7 +33,7 @@ export  const resolvers: IResolvers = {
       }
 
       req.session.userId = user.id;
-      
+
       return user;
     }
   }
