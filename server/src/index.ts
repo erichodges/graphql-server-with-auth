@@ -1,4 +1,5 @@
-// import "reflect-metadata";
+import "reflect-metadata";
+import "dotenv/config";
 import {createConnection} from "typeorm";
 import { ApolloServer } from 'apollo-server-express';
 import * as express from "express";
@@ -6,6 +7,9 @@ import * as session from 'express-session';
 
 import { resolvers } from './resolvers';
 import { typeDefs } from './typeDefs';
+// import { stripe } from "./stripe";
+
+// stripe;
 
 // import {User} from "./entity/User";
 
