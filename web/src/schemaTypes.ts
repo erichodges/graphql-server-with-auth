@@ -25,6 +25,7 @@ export interface MeQuery {
 export interface CreateSubscriptionMutation_createSubscription {
   id: string;
   email: string;
+  type: string;
 }
 
 export interface CreateSubscriptionMutation {
